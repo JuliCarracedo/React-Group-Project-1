@@ -6,12 +6,12 @@ import Missions from './pages/Missions/Missions';
 import Profile from './pages/Profile';
 
 const App = () => (
-  <div>
+  <div className="app">
     <Router>
       <Header />
       <Routes>
         <Route path="/missions" element={<Missions />} />
-        <Route path="/missions" element={<Profile />} />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
     </Router>
   </div>

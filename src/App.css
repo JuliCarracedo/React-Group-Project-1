@@ -5,6 +5,11 @@
   scroll-behavior: smooth;
 }
 
+.app {
+  display: flex;
+  flex-direction: column;
+}
+
 .headerContainer {
   margin: 10px 100px;
 }
@@ -30,4 +35,9 @@ li {
 
 a:link {
   text-decoration: none;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
 }

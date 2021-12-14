@@ -6,7 +6,7 @@ const Profile = () => {
   const dragons = [{ title: 'Dragon1' }, { title: 'Dragon2' }, { title: 'Dragon3' }];
 
   return (
-    <div>
+    <div className="profile">
       <section>
         <h2>My Missions</h2>
         <ul>
