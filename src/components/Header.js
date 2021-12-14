@@ -10,10 +10,10 @@ const Header = () => (
     </div>
     <div>
       <ul>
-        <NavLink to="/">Rockets</NavLink>
-        <NavLink to="/missions">Missions</NavLink>
-        <NavLink to="/dragons">Dragons</NavLink>
-        <NavLink to="/profile">My Profile</NavLink>
+        <NavLink exact to="/" activeClassName="active-link">Rockets</NavLink>
+        <NavLink to="/missions" activeClassName="active-link">Missions</NavLink>
+        <NavLink to="/dragons" activeClassName="active-link">Dragons</NavLink>
+        <NavLink to="/profile" activeClassName="active-link">My Profile</NavLink>
       </ul>
     </div>
   </div>

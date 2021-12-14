@@ -19,15 +19,19 @@
 }
 
 ul {
-  list-style-type: none;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
 }
 
-li {
-  display: inline;
-  padding: 1rem;
-  float: right;
+.active-link {
+  text-decoration: underline;
 }
 
 a:link {
   text-decoration: none;
+}
+
+a:link:active {
+  text-decoration: underline;
 }
