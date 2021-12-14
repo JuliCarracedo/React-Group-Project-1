@@ -19,9 +19,37 @@ const missionsList = [
 ];
 
 const Missions = () => (
-  <div > 
-      
-  </div> 
+  <div>
+    <table>
+      <tr>
+        <th>Mission</th>
+        <th>Description</th>
+        <th>Status</th>
+        <th>Invisible</th>
+      </tr>
+      {missionsList.map((mission) => (
+        <tr key={mission.missionName}>
+          <td>{mission.missionName}</td>
+          <td>{mission.missionDescription}</td>
+          {mission.activeMember && <td> Active Member </td>}
+          {!mission.activeMember && <td> Not a member </td>}
+          {mission.activeMember && (
+          <td>
+            {' '}
+            <button type="button"> Leave Mission</button>
+          </td>
+          )}
+          {!mission.activeMember && (
+          <td>
+            {' '}
+            <button type="button"> Join Mission</button>
+            {' '}
+          </td>
+          )}
+        </tr>
+      ))}
+    </table>
+  </div>
 );
 
 export default Missions;
