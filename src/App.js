@@ -1,13 +1,18 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Header from './components/Header';
 import './App.css';
+import Dragons from './pages/Dragons';
 
 const App = () => (
   <div>
     <Router>
       <Header />
-      <Routes />
+      <Switch>
+        <Route path="/dragons">
+          <Dragons />
+        </Route>
+      </Switch>
     </Router>
   </div>
 

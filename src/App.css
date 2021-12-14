@@ -18,16 +18,56 @@
   float: left;
 }
 
-ul {
-  list-style-type: none;
+.dragonContainer {
+  margin: 50px;
+
 }
 
-li {
-  display: inline;
-  padding: 1rem;
-  float: right;
+.dragonItem {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 10px;
+  align-items: center;
+}
+
+.dragonDetails {
+  grid-column: 2 / span 3;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+.active-link{
+  text-decoration: underline;
 }
 
 a:link {
   text-decoration: none;
+}
+
+a:link:active{
+  text-decoration: underline;
+}
+
+.reserveBtn {
+  background-color: rgb(94, 94, 238);
+  color: white;
+  border-radius: 5px;
+  width: 130px;
+  height: 30px;
+}
+
+.reserveBtn:active {
+  background-color: white;
+  color: black;
+}
+
+.reservedIcon {
+  display: none;
+  color: white;
+  background-color: rgb(6, 121, 115);
+  border-radius: 5px;
 }
