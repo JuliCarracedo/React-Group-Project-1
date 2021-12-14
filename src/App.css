@@ -24,13 +24,13 @@
 }
 
 ul {
-  list-style-type: none;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
 }
 
-li {
-  display: inline;
-  padding: 1rem;
-  float: right;
+.active-link {
+  text-decoration: underline;
 }
 
 a:link {
@@ -40,4 +40,8 @@ a:link {
 .profile {
   display: flex;
   flex-direction: column;
+}
+
+a:link:active {
+  text-decoration: underline;
 }
