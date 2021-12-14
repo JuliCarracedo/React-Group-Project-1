@@ -4,3 +4,30 @@
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
+
+.headerContainer {
+  margin: 10px 100px;
+}
+
+.logo {
+  float: left;
+  padding-right: 0.5rem;
+}
+
+.headerNav {
+  float: left;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  display: inline;
+  padding: 1rem;
+  float: right;
+}
+
+a:link {
+  text-decoration: none;
+}
