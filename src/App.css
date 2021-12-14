@@ -20,7 +20,6 @@
 
 .dragonContainer {
   margin: 50px;
-
 }
 
 .dragonItem {
@@ -40,7 +39,7 @@ ul {
   justify-content: space-around;
 }
 
-.active-link{
+.active-link {
   text-decoration: underline;
 }
 
@@ -48,7 +47,7 @@ a:link {
   text-decoration: none;
 }
 
-a:link:active{
+a:link:active {
   text-decoration: underline;
 }
 
