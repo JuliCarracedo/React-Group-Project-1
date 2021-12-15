@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getMissions } from '../../redux/missions/missions';
+import JoinButton from './JoinButton';
+import LeaveButton from './LeaveMission';
 
 const Missions = () => {
   const dispatch = useDispatch();
@@ -31,13 +33,13 @@ const Missions = () => {
               {mission.member && (
                 <td>
                   {' '}
-                  <button type="button"> Leave Mission</button>
+                  <LeaveButton id={mission.id} />
                 </td>
               )}
               {!mission.member && (
                 <td>
                   {' '}
-                  <button type="button"> Join Mission</button>
+                  <JoinButton id={mission.id} />
                   {' '}
                 </td>
               )}
