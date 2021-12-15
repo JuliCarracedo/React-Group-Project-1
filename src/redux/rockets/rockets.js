@@ -2,6 +2,8 @@ const GET_ROCKETS_REQUEST = 'GET_ROCKETS_REQUEST';
 const GET_ROCKETS_SUCCESS = 'GET_ROCKETS_SUCCESS';
 const GET_ROCKETS_FAILED = 'GET_ROCKETS_FAILED';
 
+const RESERVE_ROCKET = 'RESERVE_ROCKET';
+
 export const getRockets = () => (dispatch) => {
   dispatch({ type: GET_ROCKETS_REQUEST });
 
@@ -26,6 +28,10 @@ export const getRockets = () => (dispatch) => {
   fetchBooks();
 };
 
+export const reserveRocket = (id) => (dispatch) => {
+  dispatch({ type: RESERVE_ROCKET, payload: id });
+};
+
 const initialState = {
   loading: true,
   rockets: [],
@@ -40,6 +46,14 @@ const rocketsReducer = (state = initialState, action) => {
       return { ...state, loading: false, rockets: action.payload };
     case GET_ROCKETS_FAILED:
       return { ...state, loading: false, error: action.payload };
+
+    case RESERVE_ROCKET:
+      return {
+        ...state,
+        rockets: state.rockets.map((rocket) => (
+          rocket.id === action.payload ? { ...rocket, reserved: true } : rocket
+        )),
+      };
     default:
       return state;
   }
