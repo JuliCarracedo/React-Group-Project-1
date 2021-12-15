@@ -9,14 +9,12 @@ export const getDragons = () => (dispatch) => {
     try {
       const data = await fetch('https://api.spacexdata.com/v3/dragons');
       const dragons = await data.json();
-      console.log(dragons);
       const payload = dragons.map((dragon) => ({
         id: dragon.id,
         name: dragon.name,
         type: dragon.type,
         image: dragon.flickr_images,
       }));
-      console.log(dragons);
       dispatch({ type: GET_DRAGONS_SUCCESS, payload });
     } catch (e) {
       dispatch({
