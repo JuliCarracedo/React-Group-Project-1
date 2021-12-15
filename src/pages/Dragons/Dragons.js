@@ -1,48 +1,44 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import './Dragons.css';
+import { getDragons } from '../../redux/dragons/dragons';
 
 const Dragons = () => {
-  const dragons = [
-    {
-      id: 1,
-      name: 'Falcon 1',
-      type: 'SpaceX1',
-    },
-    {
-      id: 2,
-      name: 'Falcon 9',
-      type: 'SpaceX2',
-    },
-    {
-      id: 3,
-      name: 'Falcon Heavy',
-      type: 'SpaceX3',
-    },
-  ];
+  const dispatch = useDispatch();
+  const { loading, dragons } = useSelector((state) => state.dragonsReducer);
+
+  useEffect(() => {
+    dispatch(getDragons());
+  }, [dispatch]);
 
   return (
     <div className="dragonContainer">
-      {dragons.map((dragon) => (
-        <div className="dragonItem" key={dragon.id}>
-          <div className="dragonImage">
-            <img src="" alt="flickr_images" />
-          </div>
-          <div className="dragonDetails">
-            <p>
-              Name:
-              {dragon.name}
-            </p>
-            <button type="button" className="reservedIcon">Reserved</button>
-            <p>
-              Type:
-              {dragon.type}
-            </p>
-            <button type="button" className="reserveBtn">Reserve Dragon</button>
-          </div>
+      { loading ? (
+        <p>Loading...</p>
+      ) : (
+        <div>
+          {dragons.map((dragon) => (
+            <div className="dragonItem" key={dragon.id}>
+              <div className="dragonImage">
+                <img src={dragon.image[1]} alt="flickr_images" style={{ width: '300px', height: '300px' }} />
+              </div>
+              <div className="dragonDetails">
+                <p>
+                  Name:
+                  {dragon.name}
+                </p>
+                <button type="button" className="reservedIcon">Reserved</button>
+                <p>
+                  Type:
+                  {dragon.type}
+                </p>
+                <button type="button" className="reserveBtn">Reserve Dragon</button>
+              </div>
+            </div>
+          ))}
         </div>
-      ))}
+      )}
     </div>
   );
 };
-
 export default Dragons;
