@@ -3,6 +3,7 @@ const GET_ROCKETS_SUCCESS = 'GET_ROCKETS_SUCCESS';
 const GET_ROCKETS_FAILED = 'GET_ROCKETS_FAILED';
 
 const RESERVE_ROCKET = 'RESERVE_ROCKET';
+const CANCEL_ROCKET_RESERVATION = 'CANCEL_ROCKET_RESERVATION';
 
 export const getRockets = () => (dispatch) => {
   dispatch({ type: GET_ROCKETS_REQUEST });
@@ -32,6 +33,10 @@ export const reserveRocket = (id) => (dispatch) => {
   dispatch({ type: RESERVE_ROCKET, payload: id });
 };
 
+export const cancelReservation = (id) => (dispatch) => {
+  dispatch({ type: CANCEL_ROCKET_RESERVATION, payload: id });
+};
+
 const initialState = {
   loading: true,
   rockets: [],
@@ -54,6 +59,14 @@ const rocketsReducer = (state = initialState, action) => {
           rocket.id === action.payload ? { ...rocket, reserved: true } : rocket
         )),
       };
+    case CANCEL_ROCKET_RESERVATION:
+      return {
+        ...state,
+        rockets: state.rockets.map((rocket) => (
+          rocket.id === action.payload ? { ...rocket, reserved: false } : rocket
+        )),
+      };
+
     default:
       return state;
   }
