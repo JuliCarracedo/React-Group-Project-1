@@ -8,7 +8,7 @@ const Dragons = () => {
   const { loading, dragons } = useSelector((state) => state.dragonsReducer);
 
   useEffect(() => {
-    dispatch(getDragons);
+    dispatch(getDragons());
   }, [dispatch]);
 
   return (
@@ -20,7 +20,7 @@ const Dragons = () => {
           {dragons.map((dragon) => (
             <div className="dragonItem" key={dragon.id}>
               <div className="dragonImage">
-                <img src={dragon.image[1]} alt="flickr_images" />
+                <img src={dragon.image[1]} alt="flickr_images" style={{ width: '300px', height: '300px' }} />
               </div>
               <div className="dragonDetails">
                 <p>
