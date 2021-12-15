@@ -1,0 +1,8 @@
+.rockets__container-rocket_details .badge {
+  padding: 5px;
+  height: 15px;
+  background-color: rgb(101, 101, 253);
+  color: #fff;
+  margin-right: 7px;
+  border-radius: 4px;
+}
