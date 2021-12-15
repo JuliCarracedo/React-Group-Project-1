@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Rocket from '../../components/Rocket/Rocket';
-import { getRockets, reserveRocket } from '../../redux/rockets/rockets';
+import { cancelReservation, getRockets, reserveRocket } from '../../redux/rockets/rockets';
 import './Rockets.css';
 
 const Rockets = () => {
@@ -10,6 +10,10 @@ const Rockets = () => {
 
   const onReserveRocket = (id) => {
     dispatch(reserveRocket(id));
+  };
+
+  const onCancelReservation = (id) => {
+    dispatch(cancelReservation(id));
   };
 
   useEffect(() => {
@@ -28,6 +32,7 @@ const Rockets = () => {
               key={rocket.id}
               rocket={rocket}
               reserveRocket={onReserveRocket}
+              cancelReservation={onCancelReservation}
             />
           ))
         )}
