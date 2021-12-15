@@ -1,11 +1,16 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getRockets } from '../../redux/rockets/rockets';
+import Rocket from '../../components/Rocket/Rocket';
+import { getRockets, reserveRocket } from '../../redux/rockets/rockets';
 import './Rockets.css';
 
 const Rockets = () => {
   const dispatch = useDispatch();
   const { loading, rockets } = useSelector((state) => state.rocketsReducer);
+
+  const onReserveRocket = (id) => {
+    dispatch(reserveRocket(id));
+  };
 
   useEffect(() => {
     dispatch(getRockets());
@@ -19,16 +24,11 @@ const Rockets = () => {
           <p>Loading...</p>
         ) : (
           rockets.map((rocket) => (
-            <div key={rocket.id} className="rockets__container-rocket">
-              <div className="rockets__container-rocket_img">
-                <img alt="rocket" src={rocket.images[0]} />
-              </div>
-              <div className="rockets__container-rocket_details">
-                <h2>{rocket.name}</h2>
-                <p>{rocket.desc}</p>
-                <button type="button">Reserve Rocket</button>
-              </div>
-            </div>
+            <Rocket
+              key={rocket.id}
+              rocket={rocket}
+              reserveRocket={onReserveRocket}
+            />
           ))
         )}
       </div>
