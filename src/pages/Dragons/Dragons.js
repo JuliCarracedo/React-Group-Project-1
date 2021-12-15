@@ -32,7 +32,13 @@ const Dragons = () => {
                   Type:
                   {dragon.type}
                 </p>
-                <button type="button" className="reserveBtn" onClick={() => { dispatch(reserveDragon(dragon.id)); }}>Reserve Dragon</button>
+                <button
+                  type="button"
+                  className="reserveBtn"
+                  onClick={() => { dispatch(reserveDragon(dragon.id)); }}
+                >
+                  Reserve Dragon
+                </button>
               </div>
             </div>
           ))}
