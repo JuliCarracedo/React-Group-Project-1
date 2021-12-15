@@ -1,6 +1,7 @@
 const GET_DRAGONS_REQUEST = 'GET_DRAGONS_REQUEST';
 const GET_DRAGONS_SUCCESS = 'GET_DRAGONS_SUCCESS';
 const GET_DRAGONS_FAILED = 'GET_DRAGONS_FAILED';
+const RESERVE_DRAGON = 'RESERVE_DRAGON';
 
 export const getDragons = () => (dispatch) => {
   dispatch({ type: GET_DRAGONS_REQUEST });
@@ -32,6 +33,10 @@ const initialState = {
   error: null,
 };
 
+export const reserveDragon = (id) => (dispatch) => {
+  dispatch({ type: RESERVE_DRAGON, payload: id });
+};
+
 const dragonsReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_DRAGONS_REQUEST:
@@ -40,6 +45,13 @@ const dragonsReducer = (state = initialState, action) => {
       return { ...state, loading: false, dragons: action.payload };
     case GET_DRAGONS_FAILED:
       return { ...state, loading: false, error: action.payload };
+    case RESERVE_DRAGON:
+      return {
+        ...state,
+        dragons: state.dragons.map((dragon) => (
+          dragon.id === action.payload ? { ...dragon, reserved: true } : dragon
+        )),
+      };
     default:
       return state;
   }
