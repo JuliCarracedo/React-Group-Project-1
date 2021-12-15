@@ -5,7 +5,7 @@ const GET_ROCKETS_FAILED = 'GET_ROCKETS_FAILED';
 export const getRockets = () => (dispatch) => {
   dispatch({ type: GET_ROCKETS_REQUEST });
 
-  const fetchBooks = async () => {
+  const fetchRockets = async () => {
     try {
       const data = await fetch('https://api.spacexdata.com/v3/rockets');
       const rockets = await data.json();
@@ -23,7 +23,7 @@ export const getRockets = () => (dispatch) => {
       });
     }
   };
-  fetchBooks();
+  fetchRockets();
 };
 
 const initialState = {

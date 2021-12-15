@@ -1,55 +1,52 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { getMissions } from '../../redux/missions/missions';
 
-const missionsList = [
-  {
-    missionName: 'Thaicom',
-    missionDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sem erat, euismod at eros luctus, vulputate laoreet arcu. Duis a pharetra neque. Donec auctor nec sapien id pulvinar. Proin egestas, libero in pellentesque lobortis, nulla metus sodales mauris, mattis imperdiet ante ex eu urna. Nullam dictum eget enim vitae sagittis. Vestibulum elementum auctor dui auctor consequat.',
-    activeMember: false,
-  },
-  {
-    missionName: 'Command',
-    missionDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sem erat, euismod at eros luctus, vulputate laoreet arcu. Duis a pharetra neque. Donec auctor nec sapien id pulvinar. Proin egestas, libero in pellentesque lobortis, nulla metus sodales mauris, mattis imperdiet ante ex eu urna. Nullam dictum eget enim vitae sagittis. Vestibulum elementum auctor dui auctor consequat.',
-    activeMember: true,
-  },
-  {
-    missionName: 'Goliath',
-    missionDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sem erat, euismod at eros luctus, vulputate laoreet arcu. Duis a pharetra neque. Donec auctor nec sapien id pulvinar. Proin egestas, libero in pellentesque lobortis, nulla metus sodales mauris, mattis imperdiet ante ex eu urna. Nullam dictum eget enim vitae sagittis. Vestibulum elementum auctor dui auctor consequat.',
-    activeMember: false,
-  },
-];
+const Missions = () => {
+  const dispatch = useDispatch();
+  const { loading, missions } = useSelector((state) => state.missionsReducer);
 
-const Missions = () => (
-  <div>
-    <table>
-      <tr>
-        <th>Mission</th>
-        <th>Description</th>
-        <th>Status</th>
-        <th>Invisible</th>
-      </tr>
-      {missionsList.map((mission) => (
-        <tr key={mission.missionName}>
-          <td>{mission.missionName}</td>
-          <td>{mission.missionDescription}</td>
-          {mission.activeMember && <td> Active Member </td>}
-          {!mission.activeMember && <td> Not a member </td>}
-          {mission.activeMember && (
-          <td>
-            {' '}
-            <button type="button"> Leave Mission</button>
-          </td>
-          )}
-          {!mission.activeMember && (
-          <td>
-            {' '}
-            <button type="button"> Join Mission</button>
-            {' '}
-          </td>
-          )}
-        </tr>
-      ))}
-    </table>
-  </div>
-);
+  useEffect(() => {
+    dispatch(getMissions());
+  }, [dispatch]);
+
+  return (
+    <div>
+      {loading ? (
+        <p>Loading...</p>
+      ) : (
+        <table>
+          <tr>
+            <th>Mission</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>Invisible</th>
+          </tr>
+          {missions.map((mission) => (
+            <tr key={mission.id}>
+              <td>{mission.name}</td>
+              <td>{mission.desc}</td>
+              {mission.member && <td> Active Member </td>}
+              {!mission.member && <td> Not a member </td>}
+              {mission.member && (
+                <td>
+                  {' '}
+                  <button type="button"> Leave Mission</button>
+                </td>
+              )}
+              {!mission.member && (
+                <td>
+                  {' '}
+                  <button type="button"> Join Mission</button>
+                  {' '}
+                </td>
+              )}
+            </tr>
+          ))}
+        </table>
+      )}
+    </div>
+  );
+};
 
 export default Missions;
