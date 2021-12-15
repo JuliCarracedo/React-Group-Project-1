@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import './Dragons.css';
-import { getDragons } from '../../redux/dragons/dragons';
+import { getDragons, reserveDragon } from '../../redux/dragons/dragons';
 
 const Dragons = () => {
   const dispatch = useDispatch();
@@ -32,7 +32,7 @@ const Dragons = () => {
                   Type:
                   {dragon.type}
                 </p>
-                <button type="button" className="reserveBtn">Reserve Dragon</button>
+                <button type="button" className="reserveBtn" onClick={() => { dispatch(reserveDragon(dragon.id)); }}>Reserve Dragon</button>
               </div>
             </div>
           ))}
