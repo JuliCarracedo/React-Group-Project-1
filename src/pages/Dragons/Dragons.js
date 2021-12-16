@@ -24,21 +24,26 @@ const Dragons = () => {
               </div>
               <div className="dragonDetails">
                 <p>
+                  {dragon.reserved && (
+                    <button type="button" className="reservedIcon">Reserved</button>
+                  )}
                   Name:
                   {dragon.name}
                 </p>
-                <button type="button" className="reservedIcon">Reserved</button>
                 <p>
                   Type:
                   {dragon.type}
                 </p>
-                <button
-                  type="button"
-                  className="reserveBtn"
-                  onClick={() => { dispatch(reserveDragon(dragon.id)); }}
-                >
-                  Reserve Dragon
-                </button>
+                {!dragon.reserved && (
+                  <button
+                    type="button"
+                    className="reserveBtn"
+                    onClick={() => { dispatch(reserveDragon(dragon.id)); }}
+                  >
+                    Reserve Dragon
+                  </button>
+                )}
+                {dragon.reserved && (
                 <button
                   type="button"
                   className="reserveBtn"
@@ -46,6 +51,7 @@ const Dragons = () => {
                 >
                   Cancel Reservation
                 </button>
+                )}
               </div>
             </div>
           ))}
