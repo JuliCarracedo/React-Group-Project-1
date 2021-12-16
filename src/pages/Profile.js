@@ -12,9 +12,11 @@ const Profile = () => {
     <div className="profile">
       <section>
         <h2>My Missions</h2>
-        <ul>
-          {missionsList.map((mission) => <li key={mission.name}>{mission.name}</li>)}
-        </ul>
+        {missionsList.length > 0 ? (
+          <ul>
+            {missionsList.map((mission) => <li key={mission.name}>{mission.name}</li>)}
+          </ul>
+        ) : <p>No missions joined</p>}
       </section>
       <section>
         <h2>My Dragons</h2>
