@@ -6,11 +6,9 @@ const Profile = () => {
     (state) => state.missionsReducer.missions,
   ).filter((mission) => mission.member);
 
-  const dragons = [
-    { title: 'Dragon1' },
-    { title: 'Dragon2' },
-    { title: 'Dragon3' },
-  ];
+  const dragonList = useSelector(
+    (state) => state.dragonsReducer.dragons,
+  ).filter((dragon) => dragon.reserved);
 
   const reservedRockets = useSelector(
     (state) => state.rocketsReducer.rockets,
@@ -32,11 +30,11 @@ const Profile = () => {
       </section>
       <section>
         <h2>My Dragons</h2>
-        <ul>
-          {dragons.map((dragon) => (
-            <li key={dragon.title}>{dragon.title}</li>
-          ))}
-        </ul>
+        {dragonList.length > 0 ? (
+          <ul>
+            {dragonList.map((dragon) => <li key={dragon.id}>{dragon.name}</li>)}
+          </ul>
+        ) : <p>No reserved dragons</p> }
       </section>
       <section>
         <h2>My Rockets</h2>
