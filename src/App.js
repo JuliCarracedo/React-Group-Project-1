@@ -8,11 +8,13 @@ import Profile from './pages/Profile';
 import Dragons from './pages/Dragons/Dragons';
 import Rockets from './pages/Rockets/Rockets';
 import { getMissions } from './redux/missions/missions';
+import { getRockets } from './redux/rockets/rockets';
 
 const App = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getMissions());
+    dispatch(getRockets());
   }, [dispatch]);
   return (
     <div className="app">

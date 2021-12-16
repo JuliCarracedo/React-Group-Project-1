@@ -5,8 +5,16 @@ const Profile = () => {
   const missionsList = useSelector(
     (state) => state.missionsReducer.missions,
   ).filter((mission) => mission.member);
-  const rockets = [{ title: 'Falcon' }, { title: 'Falcon Heavy' }, { title: 'Rocket' }];
-  const dragons = [{ title: 'Dragon1' }, { title: 'Dragon2' }, { title: 'Dragon3' }];
+
+  const dragons = [
+    { title: 'Dragon1' },
+    { title: 'Dragon2' },
+    { title: 'Dragon3' },
+  ];
+
+  const reservedRockets = useSelector(
+    (state) => state.rocketsReducer.rockets,
+  ).filter((rocket) => rocket.reserved);
 
   return (
     <div className="profile">
@@ -14,20 +22,28 @@ const Profile = () => {
         <h2>My Missions</h2>
         {missionsList.length > 0 ? (
           <ul>
-            {missionsList.map((mission) => <li key={mission.name}>{mission.name}</li>)}
+            {missionsList.map((mission) => (
+              <li key={mission.name}>{mission.name}</li>
+            ))}
           </ul>
-        ) : <p>No missions joined</p>}
+        ) : (
+          <p>No missions joined</p>
+        )}
       </section>
       <section>
         <h2>My Dragons</h2>
         <ul>
-          {dragons.map((dragon) => <li key={dragon.title}>{dragon.title}</li>)}
+          {dragons.map((dragon) => (
+            <li key={dragon.title}>{dragon.title}</li>
+          ))}
         </ul>
       </section>
       <section>
         <h2>My Rockets</h2>
         <ul>
-          {rockets.map((rocket) => <li key={rocket.title}>{rocket.title}</li>)}
+          {reservedRockets.map((rocket) => (
+            <li key={rocket.id}>{rocket.name}</li>
+          ))}
         </ul>
       </section>
     </div>
