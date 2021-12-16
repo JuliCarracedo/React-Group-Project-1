@@ -1,7 +1,10 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
 const Profile = () => {
-  const missions = [{ title: 'Thaicom' }, { title: 'Goliath' }, { title: 'Titan' }];
+  const missionsList = useSelector(
+    (state) => state.missionsReducer.missions,
+  ).filter((mission) => mission.member);
   const rockets = [{ title: 'Falcon' }, { title: 'Falcon Heavy' }, { title: 'Rocket' }];
   const dragons = [{ title: 'Dragon1' }, { title: 'Dragon2' }, { title: 'Dragon3' }];
 
@@ -10,7 +13,7 @@ const Profile = () => {
       <section>
         <h2>My Missions</h2>
         <ul>
-          {missions.map((mission) => <li key={mission.title}>{mission.title}</li>)}
+          {missionsList.map((mission) => <li key={mission.name}>{mission.name}</li>)}
         </ul>
       </section>
       <section>

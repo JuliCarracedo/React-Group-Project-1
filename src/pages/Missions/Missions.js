@@ -1,16 +1,9 @@
-import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { getMissions } from '../../redux/missions/missions';
+import { useSelector } from 'react-redux';
 import JoinButton from './JoinButton';
 import LeaveButton from './LeaveMission';
 
 const Missions = () => {
-  const dispatch = useDispatch();
   const { loading, missions } = useSelector((state) => state.missionsReducer);
-
-  useEffect(() => {
-    dispatch(getMissions());
-  }, [dispatch]);
 
   return (
     <div>
