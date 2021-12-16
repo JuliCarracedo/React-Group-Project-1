@@ -14,9 +14,20 @@
   margin: 2rem 0;
 }
 
-.rockets__container-rocket_img,
+.rockets__container-rocket_img {
+  width: 200px;
+  margin-bottom: 1rem;
+}
+
+.rockets__container-rocket_img img {
+  width: 200px;
+}
+
 .rockets__container-rocket_details p {
   margin-bottom: 1rem;
+  font-family: var(--font-family);
+  font-size: 18px;
+  line-height: 22px;
 }
 
 @media screen and (min-width: 430px) {

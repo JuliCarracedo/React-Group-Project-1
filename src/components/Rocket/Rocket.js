@@ -14,7 +14,11 @@ const Rocket = ({ rocket, reserveRocket, cancelReservation }) => (
         {rocket.desc}
       </p>
       {rocket.reserved ? (
-        <button type="button" onClick={() => cancelReservation(rocket.id)}>
+        <button
+          type="button"
+          style={{ color: '#000', background: 'transparent' }}
+          onClick={() => cancelReservation(rocket.id)}
+        >
           Cancel Reservation
         </button>
       ) : (
