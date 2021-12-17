@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import './App.css';
 import Missions from './pages/Missions/Missions';
-import Profile from './pages/Profile';
+import Profile from './pages/Profile/Profile';
 import Dragons from './pages/Dragons/Dragons';
 import Rockets from './pages/Rockets/Rockets';
 import { getMissions } from './redux/missions/missions';
