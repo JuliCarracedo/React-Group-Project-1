@@ -3,6 +3,7 @@
 
   <h3 align="center">Space Travelers' Hub</h3>
 
+  ![Space Travelers' Hub](space.PNG)
 
   <p align="center">
     This application built with React and Redux utilizes live data from the SpaceX API to build a web application for a company that provides commercial and scientific space travel services. The application will allow users to book rockets and join selected space missions.
@@ -11,7 +12,7 @@
     <br />
     <br />
     ·
-    <a href="#"><strong>Live Demo Coming Soon...</strong></a>
+    <a href="https://the-astronauts.netlify.app"><strong>Live Demo Netlify.</strong></a>
     ·
     <a href="https://github.com/JuliCarracedo/React-Group-Project-1/issues">Report Bug</a>
     ·
