@@ -1,12 +1,12 @@
 .dragonContainer {
-  margin: 50px;
+  margin: 2rem 4rem;
 }
 
 .dragonItem {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  column-gap: 10px;
-  align-items: center;
+  grid-template-columns: 220px auto auto auto;
+  margin: 2rem 0;
+  align-items: flex-start;
 }
 
 .dragonDetails {
@@ -14,11 +14,19 @@
 }
 
 .reserveBtn {
-  background-color: rgb(94, 94, 238);
-  color: white;
-  border-radius: 5px;
-  width: 130px;
-  height: 30px;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ececec;
+  background-color: rgb(49 49 133);
+  color: #fff;
+}
+
+.reserveBtn1 {
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ececec;
+  background-color: white;
+  color: rgb(87, 82, 82);
 }
 
 .reserveBtn:active {
@@ -28,6 +36,19 @@
 
 .reservedIcon {
   color: white;
-  background-color: rgb(6, 121, 115);
+  background-color: rgb(49 49 133);
+  margin-right: 7px;
   border-radius: 5px;
+  padding: 5px;
+}
+
+.dragonImage {
+  width: 200px;
+  margin-bottom: 1rem;
+}
+
+.dragonDetails p {
+  margin-bottom: 1rem;
+  font-size: 18px;
+  line-height: 24px;
 }

@@ -16,7 +16,7 @@ const Dragons = () => {
           {dragons.map((dragon) => (
             <div className="dragonItem" key={dragon.id}>
               <div className="dragonImage">
-                <img src={dragon.image[1]} alt="flickr_images" style={{ width: '300px', height: '300px' }} />
+                <img src={dragon.image[1]} alt="flickr_images" style={{ width: '200px', height: '150px' }} />
               </div>
               <div className="dragonDetails">
                 <p>
@@ -42,7 +42,7 @@ const Dragons = () => {
                 {dragon.reserved && (
                 <button
                   type="button"
-                  className="reserveBtn"
+                  className="reserveBtn1"
                   onClick={() => { dispatch(cancelReservation(dragon.id)); }}
                 >
                   Cancel Reservation
