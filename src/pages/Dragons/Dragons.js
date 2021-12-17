@@ -5,10 +5,11 @@ import { reserveDragon, cancelReservation } from '../../redux/dragons/dragons';
 
 const Dragons = () => {
   const dispatch = useDispatch();
-  const { loading, dragons } = useSelector((state) => state.dragonsReducer);
+  const { loading, dragons, error } = useSelector((state) => state.dragonsReducer);
 
   return (
     <div className="dragonContainer">
+      {error && <p>{error}</p>}
       { loading ? (
         <p>Loading...</p>
       ) : (

@@ -6,7 +6,7 @@ import './Rockets.css';
 
 const Rockets = () => {
   const dispatch = useDispatch();
-  const { loading, rockets } = useSelector((state) => state.rocketsReducer);
+  const { loading, rockets, error } = useSelector((state) => state.rocketsReducer);
 
   const onReserveRocket = (id) => {
     dispatch(reserveRocket(id));
@@ -19,6 +19,7 @@ const Rockets = () => {
   return (
     <section className="rockets">
       <div className="rockets__container">
+        {error && <p>{error}</p>}
         {loading ? (
           <p>Loading...</p>
         ) : (
