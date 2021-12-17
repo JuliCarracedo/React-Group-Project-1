@@ -10,7 +10,7 @@ const JoinButton = (props) => {
     e.stopPropagation();
     dispatch(joinMission(id));
   };
-  return (<button type="button" onClick={(e) => handleClick(e)}> Join Mission</button>);
+  return (<button className="join-mission-btn" type="button" onClick={(e) => handleClick(e)}> Join Mission</button>);
 };
 
 JoinButton.propTypes = {
