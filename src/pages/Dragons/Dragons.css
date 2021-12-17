@@ -1,0 +1,57 @@
+/* stylelint-disable no-missing-end-of-source-newline */
+
+/* This linter was disabled due to raising errors on line 54 of a 36-lines code */
+.dragonContainer {
+  margin: 2rem 4rem;
+}
+
+.dragonItem {
+  display: grid;
+  grid-template-columns: 220px auto auto auto;
+  margin: 2rem 0;
+  align-items: flex-start;
+}
+
+.dragonDetails {
+  grid-column: 2 / span 3;
+}
+
+.reserveBtn {
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ececec;
+  background-color: rgb(49 49 133);
+  color: #fff;
+}
+
+.reserveBtn1 {
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ececec;
+  background-color: white;
+  color: rgb(87, 82, 82);
+}
+
+.reserveBtn:active {
+  background-color: white;
+  color: black;
+}
+
+.reservedIcon {
+  color: white;
+  background-color: rgb(49 49 133);
+  margin-right: 7px;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.dragonImage {
+  width: 200px;
+  margin-bottom: 1rem;
+}
+
+.dragonDetails p {
+  margin-bottom: 1rem;
+  font-size: 18px;
+  line-height: 24px;
+}
