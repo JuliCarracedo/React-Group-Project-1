@@ -18,7 +18,6 @@ const Rockets = () => {
 
   return (
     <section className="rockets">
-      <hr />
       <div className="rockets__container">
         {loading ? (
           <p>Loading...</p>

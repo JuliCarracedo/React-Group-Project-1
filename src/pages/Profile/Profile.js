@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { cancelReservation } from '../../redux/rockets/rockets';
 import './Profile.css';
+import LeaveButton from '../Missions/LeaveMission';
 
 const Profile = () => {
   const missionsList = useSelector(
@@ -25,7 +26,10 @@ const Profile = () => {
         {missionsList.length > 0 ? (
           <ul className="profile__section-list">
             {missionsList.map((mission) => (
-              <li key={mission.name}>{mission.name}</li>
+              <li key={mission.name}>
+                {mission.name}
+                <LeaveButton id={mission.id} />
+              </li>
             ))}
           </ul>
         ) : (

@@ -6,7 +6,7 @@ const Header = () => {
   const [activeLink, setActiveLink] = useState('/');
   return (
     <div className="headerContainer">
-      <div>
+      <div className="logo-container">
         <img
           src={logo}
           alt="SpaceX logo"
@@ -17,7 +17,7 @@ const Header = () => {
           <h1>Space Travelers&apos; Hub</h1>
         </span>
       </div>
-      <div>
+      <div className="links">
         <ul className="nav__links">
           <NavLink
             to="/"
@@ -44,6 +44,7 @@ const Header = () => {
           >
             Dragons
           </NavLink>
+          <p className="separator">|</p>
           <NavLink
             to="/profile"
             onClick={() => setActiveLink('profile')}

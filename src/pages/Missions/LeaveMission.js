@@ -10,7 +10,7 @@ const LeaveButton = (props) => {
     e.stopPropagation();
     dispatch(leaveMission(id));
   };
-  return (<button type="button" onClick={(e) => handleClick(e)}> Leave Mission</button>);
+  return (<button className="leave-mission-btn" type="button" onClick={(e) => handleClick(e)}> Leave Mission</button>);
 };
 
 LeaveButton.propTypes = {
