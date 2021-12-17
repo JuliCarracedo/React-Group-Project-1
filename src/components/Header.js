@@ -18,7 +18,7 @@ const Header = () => {
         </span>
       </div>
       <div>
-        <ul>
+        <ul className="nav__links">
           <NavLink
             to="/"
             onClick={() => setActiveLink('/')}

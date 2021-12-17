@@ -1,5 +1,5 @@
 .rockets {
-  margin: 4rem 4rem;
+  margin: 2rem 4rem;
 }
 
 .rockets hr {
@@ -27,7 +27,7 @@
   margin-bottom: 1rem;
   font-family: var(--font-family);
   font-size: 18px;
-  line-height: 22px;
+  line-height: 24px;
 }
 
 @media screen and (min-width: 430px) {

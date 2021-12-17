@@ -24,7 +24,7 @@
   float: left;
 }
 
-ul {
+ul.nav__links {
   list-style: none;
   display: flex;
   justify-content: space-around;
@@ -36,11 +36,6 @@ ul {
 
 a:link {
   text-decoration: none;
-}
-
-.profile {
-  display: flex;
-  flex-direction: column;
 }
 
 a:link:active {
